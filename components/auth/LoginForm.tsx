@@ -32,7 +32,7 @@ export const LoginForm = () => {
                 name={"Sign In"}
             />
 
-            <p className="mt-3 flex justify-center font-sans text-sm font-bold leading-normal text-inherit antialiased"> Or Sing In with ...</p>
+            <p className="mt-3 flex justify-center font-body text-sm font-bold leading-normal text-inherit antialiased"> Or Sing In with ...</p>
 
             <GoogleSignBTN />
 

@@ -17,11 +17,11 @@ const RegisterPage = () => {
             < RegisterForm />
 
             <div className="p-6 pt-0">
-                <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
+                <p className="mt-6 flex justify-center font-body text-sm font-light leading-normal text-inherit antialiased">
                     Are you already registered?
                     <Link
                         href="/auth/login"
-                        className="ml-1 block font-sans text-sm font-bold leading-normal text-pastel-yellow-700 antialiased"
+                        className="ml-1 block font-body text-sm font-bold leading-normal text-pastel-yellow-700 antialiased"
                     >
                         Sign In
                     </Link>

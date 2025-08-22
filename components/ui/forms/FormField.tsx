@@ -10,7 +10,7 @@ export const FormField = ({label, placeholder, name, type}: FormFieldProps) => {
     return (
         <div className="relative h-11 w-full min-w-[200px]">
             <input
-                className="peer h-full w-full rounded-md border border-slate-400 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-slate-400 outline-0 transition-all placeholder-shown:border placeholder-shown:border-slate-200 placeholder-shown:border-t-slate-200 focus:border-2 focus:border-pastel-yellow-400 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-gray-50"
+                className="peer h-full w-full rounded-md border border-slate-400 border-t-transparent bg-transparent px-3 py-3 font-body text-sm font-normal text-slate-400 outline-0 transition-all placeholder-shown:border placeholder-shown:border-slate-200 placeholder-shown:border-t-slate-200 focus:border-2 focus:border-pastel-yellow-400 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-gray-50"
                 placeholder={placeholder || " "}
                 name={name}
                 type={type || "text"}

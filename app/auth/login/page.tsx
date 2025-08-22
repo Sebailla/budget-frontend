@@ -18,20 +18,20 @@ const LoginPage = () => {
             <LoginForm/>
 
             <div className="p-6 pt-0">
-                <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
+                <p className="mt-6 flex justify-center font-body text-sm font-light leading-normal text-inherit antialiased">
                     Do not have an account?
                     <Link
                         href="/auth/register"
-                        className="ml-1 block font-sans text-sm font-bold leading-normal text-pastel-yellow-700 antialiased"
+                        className="ml-1 block font-body text-sm font-bold leading-normal text-pastel-yellow-700 antialiased"
                     >
                         Sign up
                     </Link>
                 </p>
-                <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
+                <p className="mt-6 flex justify-center font-body text-sm font-light leading-normal text-inherit antialiased">
                     Forgot you password?
                     <Link
                         href="/auth/forgot-pass"
-                        className="ml-1 block font-sans text-sm font-bold leading-normal text-pastel-yellow-700 antialiased"
+                        className="ml-1 block font-body text-sm font-bold leading-normal text-pastel-yellow-700 antialiased"
                     >
                         Password Recovery
                     </Link>
