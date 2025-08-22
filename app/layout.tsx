@@ -1,24 +1,26 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
-import "./globals.css";
+import { Poppins } from "next/font/google";
+import "../styles/globals.css"
 
-const inter = Inter({subsets:['latin']})
-const outfit = Outfit({subsets:['latin']})
+const poppins = Poppins({
+  weight: ['300', '500', '700'],
+  subsets: ['latin'],
+})
+
+// chivo - 
 
 export const metadata: Metadata = {
-  title: "Budget App",
+  title: "Budget Tracker",
   description: "The best web app to generate and organize your budgets",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default function RootLayout({children}: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body
-        className={inter.className}
+        className={poppins.className}
       >
         {children}
       </body>
