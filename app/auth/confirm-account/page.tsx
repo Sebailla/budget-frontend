@@ -1,4 +1,4 @@
-import { ForgotPass, HeaderCard } from "@/components"
+import { ConfirmAccount, HeaderCard } from "@/components"
 
 const ConfirmAcountPage = () => {
     return (
@@ -6,7 +6,15 @@ const ConfirmAcountPage = () => {
 
             <HeaderCard title={'Confirm Account'} />
 
-            <ForgotPass />
+            <p className="p-6 text-center font-body text-md leading-normal text-inherit antialiased">
+                Please enter the 6-digit code you received in your email box provided during registration.
+            </p>
+
+            <ConfirmAccount />
+
+            <p className="p-6  text-center font-body text-md leading-normal text-inherit antialiased">
+                Once the account is confirmed, you will be <span className="font-semibold">redirected to login page</span>.
+            </p>
 
         </div>
     )

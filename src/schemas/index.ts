@@ -8,3 +8,13 @@ export const RegisterSchema = z.object({
 }).refine((data) => data.password === data.confirmPassword, {
     message: 'Passwords do not match',
 })
+
+export const TokenSchema = z.string({message: 'Invalid token'}).length(6, {message: 'Invalid token'})
+
+export const LoginSchema = z.object({
+    email: z.string()
+        .min(1, { message: 'Invalid email address' })
+        .email({ message: 'Invalid email address' }),
+    password: z.string()
+        .min(1, { message: 'Password cannot be empty' })
+})

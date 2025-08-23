@@ -6,9 +6,10 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     type?: "button" | "submit" | "reset";
     onClick?: () => void;
     className?: string;
+    disabled?: boolean;
 }
 
-const Button = ({ name, type, onClick, className }: ButtonProps) => {
+const Button = ({ name, type, onClick, className,disabled }: ButtonProps) => {
     return (
         <button
             className={clsx({
@@ -17,6 +18,7 @@ const Button = ({ name, type, onClick, className }: ButtonProps) => {
             }, className)}
             type={type || "button"}
             onClick={onClick}
+            disabled={disabled}
         >
             {name}
         </button>
