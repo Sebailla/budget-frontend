@@ -17,7 +17,7 @@ export const ForgotPass = () => {
             <Button
                 className={'btn-primary'}
                 type={"submit"}
-                name={"Reset Password"}
+                name={"Send Email"}
             />
         </form>
 
