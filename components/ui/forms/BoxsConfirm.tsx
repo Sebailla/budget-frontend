@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation"
 
 import { useActionState, useEffect, useState } from "react"
 import { toast } from "react-toastify"
+import SpinIcon from "../icons/spinIcon"
 
 export const BoxsConfirm = () => {
 
@@ -32,16 +33,17 @@ export const BoxsConfirm = () => {
         if (state.errors) {
             state.errors.forEach(e => {
                 toast.error(e)
+                setIsComplete(false)
             })
         }
 
         if (state.success) {
-                toast.success(state.success, {
-                    onClose: ()=> {
-                        router.push('/auth/login')
-                    },
-                })
-            }
+            toast.success(state.success, {
+                onClose: () => {
+                    router.push('/auth/login')
+                },
+            })
+        }
 
     }, [state, router])
 
@@ -55,7 +57,8 @@ export const BoxsConfirm = () => {
     }
 
     return (
-        <div className="flex justify-center gap-3 my-10">
+        <div className=" flex flex-col justify-center gap-4">
+            <section className="flex justify-center gap-3 my-10">
                 <PinInput
                     value={token}
                     onChange={handleChange}
@@ -69,6 +72,17 @@ export const BoxsConfirm = () => {
                     <PinInputField className="w-10 h-12 rounded-lg border border-slate-400 text-center placeholder-white shadow-md" />
                     <PinInputField className="w-10 h-12 rounded-lg border border-slate-400 text-center placeholder-white shadow-md" />
                 </PinInput>
+
+            </section>
+            <section >
+                {
+                    isComplete &&
+                    <div className="flex flex-row justify-center items-center gap-4 text-red-400 text-xl">
+                        <SpinIcon />
+                        Confirming ...
+                    </div>
+                }
+            </section>
         </div>
     )
 }

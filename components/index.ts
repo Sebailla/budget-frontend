@@ -13,7 +13,7 @@ export * from './ui/logos/Logo'
 export * from './ui/logos/LightLogo'
 export * from './ui/logos/DarkLogo'
 
-export * from './ui/crads/HeaderCard'
+export * from './ui/cards/HeaderCard'
 
 export * from './ui/forms/FormField'
 export * from './ui/forms/CheckBox'

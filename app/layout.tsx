@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Geist } from "next/font/google";
 import "../styles/globals.css"
 
-const poppins = Poppins({
+const geist = Geist({
   weight: ['300', '500', '700'],
   subsets: ['latin'],
 })
@@ -20,7 +20,7 @@ export default function RootLayout({children}: Readonly<{
   return (
     <html lang="en">
       <body
-        className={poppins.className}
+        className={geist.className}
       >
         {children}
       </body>

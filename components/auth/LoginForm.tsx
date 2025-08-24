@@ -50,7 +50,11 @@ export const LoginForm = () => {
                 name={"Sign In"}
             />
 
-            <p className="mt-3 flex justify-center font-body text-sm font-bold leading-normal text-inherit antialiased"> Or Sing In with ...</p>
+            <div className="after:border-[#e5e5e5] relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
+                <span className="bg-white text-[#737373] relative z-10 px-2">
+                    Or continue with
+                </span>
+            </div>
 
             <GoogleSignBTN />
 
