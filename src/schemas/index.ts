@@ -13,8 +13,14 @@ export const TokenSchema = z.string({message: 'Invalid token'}).length(6, {messa
 
 export const LoginSchema = z.object({
     email: z.string()
-        .min(1, { message: 'Invalid email address' })
+        .min(1, { message: 'Email address cannot be empty' })
         .email({ message: 'Invalid email address' }),
     password: z.string()
         .min(1, { message: 'Password cannot be empty' })
 })
+
+export const ErrorPesponseSchema = z.object({
+    error: z.string()
+})
+
+export const SuccessSchema = z.string()
