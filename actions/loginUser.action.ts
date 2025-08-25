@@ -57,6 +57,6 @@ export const LoginUserAction = async (prevState: ActionState, formData: FormData
         path: '/',
     })
 
-    redirect('/')
+    redirect('/admin')
 
 }
