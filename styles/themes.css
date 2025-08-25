@@ -1,0 +1,32 @@
+/*? 🎭 Temas personalizados con data-theme 
+      podés aplicar agregando data-theme="pastel" en el <html> */
+      
+:root[data-theme="pastel"] {
+  --background: #fff8f0;
+  --foreground: #1e293b;
+
+  --primary-btn: #f1f38d; /* pastel-yellow */
+  --secondary-btn: #8df3c2; /* pastel-green */
+  --primary-title: #c695f4; /* pastel-violet */
+  --accent: #f38dbe; /* pastel-rose */
+}
+
+:root[data-theme="corporate"] {
+  --background: #f9fafb;
+  --foreground: #111827;
+
+  --primary-btn: #2563eb; /* blue-600 */
+  --secondary-btn: #10b981; /* emerald-500 */
+  --primary-title: #111827;
+  --accent: #facc15; /* yellow-400 */
+}
+
+:root[data-theme="dark"] {
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+
+  --primary-btn: #21a0ca;
+  --secondary-btn: #152084;
+  --primary-title: #7c87ea;
+  --accent: #7864e6;
+}

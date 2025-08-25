@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Importo mis variables y estilos separados */
+@import "../styles/colors.css";
+@import "../styles/fonts.css";
+

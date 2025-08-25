@@ -1,29 +1,6 @@
-@import "tailwindcss";
-
-:root {
-  --foreground: #1e293b;
-  --background: #ffffff;
-  --primary-btn: #33b3de;
-  --primary-title: #7864e6;
-  --secondary-btn: #7c87ea;
-  --accent: #2c199a;
-}
+/*? 🎨 Paletas de colores personalizadas */
 
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary-btn: var(--primary-btn);
-  --color-primary-title: var(--primary-title);
-  --color-secondary-btn: var(--secondary-btn);
-  --color-accent: var(--accent);
-  --font-mono: "IBM Plex Mono", monospace;
-  --font-inter: "Inter", sans-serif;
-  --font-anuphan: "Anuphan", sans-serif;
-  --font-outfit: "Outfit", sans-serif;
-  --font-title: "Sono", sans-serif;
-  --font-anuphan: "Anuphan", sans-serif;
-  --font-body: "Geist", sans-serif;
-
   /*? -  Yellow New - */
   --color-yellow-new-50: #fef7e7;
   --color-yellow-new-100: #fbe9bb;
@@ -121,26 +98,4 @@
   --color-pastel-orange-800: #6a3c0b;
   --color-pastel-orange-900: #412507;
   --color-pastel-orange-950: #170d02;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1e293b;
-    --foreground: #ededed;
-    --primary: #21a0ca;
-    --secondary: #152084;
-    --accent: #7864e6;
-    --primary-title: #7c87ea;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  /* font-family: var(--font-anuphan); */
-}
-
-/*? - botón base - */
-.btn-primary {
-  @apply w-full rounded-md bg-pastel-yellow-200 text-gray-800 dark:text-gray-800 my-5 px-5 py-2 text-xl font-title font-bold  transition-transform duration-300 ease-in-out transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-md hover:bg-pastel-yellow-300 hover:text-gray-700;
 }

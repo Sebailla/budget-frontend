@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import "../styles/globals.css"
+import "./globals.css"
 
 const geist = Geist({
   weight: ['300', '500', '700'],

@@ -1,12 +1,11 @@
 'use client'
 
-
 import { createAccountAction } from "@/actions"
 import Button from "../ui/buttons/Button"
 import { FormField } from "../ui/forms/FormField"
-import { useActionState} from "react"
-import { ErrorMsg } from "../ui/forms/ErrorMsg"
-import { SuccessMsg } from "../ui/forms/SuccessMsg"
+import { useActionState, useEffect } from "react"
+import { toast } from "react-toastify"
+import { useRouter } from "next/navigation"
 
 
 const initialState = {
@@ -22,11 +21,26 @@ const initialState = {
 
 export const RegisterForm = () => {
 
+    const router = useRouter()
 
     const [state, dispatch] = useActionState(createAccountAction, initialState)
 
-    return (
+    useEffect(() => {
+        if (state.errors) {
+            state.errors.forEach(e => {
+                toast.error(e)
+            })
+        }
+        if (state.status === 409) {
+            toast.info(state.success)
+        }
+        if (state.success && state.status === 201) {
+            toast.success(state.success)
+            router.push('/auth/post-register-info')
+        }
+    }, [state, router])
 
+    return (
         <form
             className="flex flex-col gap-4 p-6"
             noValidate
@@ -67,16 +81,8 @@ export const RegisterForm = () => {
                 name={"Sign Up"}
             />
 
-            {state.errors.map((err, i) =>
-                <ErrorMsg key={i}>{err}</ErrorMsg>
-            )}
-            {state.success && state.status === 201 &&
-                < SuccessMsg > {state.success}</SuccessMsg>
-            }
-            {state.status === 409 &&
-                <ErrorMsg> {state.success}</ErrorMsg>}
-
         </form >
+
     )
 }
 
