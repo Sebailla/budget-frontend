@@ -41,7 +41,6 @@ export const LoginUserAction = async (prevState: ActionState, formData: FormData
     })
 
     const json = await req.json()
-    console.log(json)
 
     if (!req.ok) {
         return{
@@ -51,7 +50,7 @@ export const LoginUserAction = async (prevState: ActionState, formData: FormData
 
     // cookies Set
     (await cookies()).set({
-        name: 'budget-token',
+        name: 'BUDGET_TOKEN',
         value: json.token,
         httpOnly: true,
         path: '/',

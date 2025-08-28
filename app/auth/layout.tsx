@@ -7,7 +7,7 @@ export default function RootLayout({ children }: Readonly<{
 }>) {
     return (
         <>
-            <div className="lg:grid lg:grid-cols-2 min-h-screen bg-purple-900 absolute top-0 left-0 bg-gradient-to-bl from-gray-500 via-gray-500 to-yellow-new-400 dark:from-gray-900 dark:via-gray-900 dark:to-yellow-new-800 bottom-0 leading-5 h-full w-full overflow-hidden">
+            <div className="lg:grid lg:grid-cols-2 min-h-screen absolute top-0 left-0 bg-gradient-to-bl from-gray-500 via-gray-500 to-yellow-new-400 dark:from-gray-900 dark:via-gray-900 dark:to-yellow-new-800 bottom-0 leading-5 h-full w-full overflow-hidden">
 
                 {/* Left side of the auth layout */}
                 <section className="flex flex-col  items-center">

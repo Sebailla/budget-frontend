@@ -45,7 +45,7 @@ export const LoginForm = () => {
             <CheckBox />
 
             <Button
-                className={'btn-primary'}
+                className={'btn-primary w-full'}
                 type={"submit"}
                 name={"Sign In"}
             />

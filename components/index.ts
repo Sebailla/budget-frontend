@@ -22,3 +22,6 @@ export * from './ui/forms/SuccessMsg'
 export * from './ui/forms/BoxsConfirm'
 
 export * from './ui/ToastNotification'
+export * from './navbar/NavBar'
+export * from './footer/Footer'
+

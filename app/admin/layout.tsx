@@ -1,33 +1,32 @@
-import { ToastNotification } from "@/components";
-import DarkLogo from "@/components/ui/logos/DarkLogo";
-import Link from "next/link";
+import { Footer, Navbar, ToastNotification } from "@/components";
+import { verifySession } from "@/src/auth/dal";
+import { ThemeProvider } from "next-themes";
+
 
 export default async function AdminLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+
+    await verifySession()
+
     return (
         <>
-            <header className='bg-purple-950 py-5'>
-                <div className='max-w-5xl mx-auto flex flex-col lg:flex-row justify-between items-center'>
-                    <div className='w-96'>
-                        <Link href={'/admin'}>
-                            <DarkLogo />
-                        </Link>
-                    </div>
-                </div>
-            </header>
-            <section className='max-w-5xl mx-auto mt-20 p-3 py-10'>
-                {children}
-            </section>
-            <ToastNotification />
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                <div className="bg-primary-bg dark:bg-primary-bg">
+                    <Navbar />
 
-            <footer className='py-5'>
-                <p className='text-center'>
-                    Todos los Derechos Reservados {new Date().getFullYear()}
-                </p>
-            </footer>
+                    <section className='max-w-5xl mx-auto mt-20 p-3 py-10'>
+                        {children}
+                    </section>
+
+                    <Footer />
+
+                    <ToastNotification />
+                </div>
+
+            </ThemeProvider>
         </>
     );
 }

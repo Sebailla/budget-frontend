@@ -1,0 +1,56 @@
+'use cliente'
+import { ChevronDownIcon } from "lucide-react";
+import { Button } from "./ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+
+
+export const UserMenu = ({
+    name,
+    email = 'john@example.com',
+    userAvatar,
+    onItemClick
+}: {
+    name?: string;
+    email?: string;
+    userAvatar?: string;
+    onItemClick?: (item: string) => void;
+}) => (
+    <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="h-12 px-2 py-0">
+                <Avatar className="h-12 w-12">
+                    <AvatarImage src={userAvatar} alt={name} />
+                    <AvatarFallback className="text-xl">
+                        {name?.split(' ').map(n => n[0]).join('')}
+                    </AvatarFallback>
+                </Avatar>
+                <ChevronDownIcon className="h-6 w-6 ml-1" />
+                <span className="sr-only">User menu</span>
+            </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="w-60">
+            <DropdownMenuLabel>
+                <div className="flex flex-col space-y-2">
+                    <p className="text-lg font-medium leading-none">{name}</p>
+                    <p className="text-xs leading-none text-[#737373]">
+                        {email}
+                    </p>
+                </div>
+            </DropdownMenuLabel>
+            {/* <DropdownMenuSeparator /> */}
+            <DropdownMenuItem onClick={() => onItemClick?.('profile')}>
+                Profile
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => onItemClick?.('settings')}>
+                Budgets
+            </DropdownMenuItem>
+
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={() => onItemClick?.('logout')}>
+                Log out
+            </DropdownMenuItem>
+        </DropdownMenuContent>
+    </DropdownMenu>
+);
+

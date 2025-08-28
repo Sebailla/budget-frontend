@@ -1,15 +1,15 @@
 import Image from "next/image"
 
-const Logo = () => {
+const LogoSolo = () => {
     return (
         <Image
-            src='/logo_Solo.svg'
+            src='/logo_Solo_col.svg'
             alt='Logo Budget tracker'
-            width={600}
-            height={250}
+            width={80}
+            height={80}
             priority={true}
         />
     )
 }
 
-export default Logo
+export default LogoSolo
