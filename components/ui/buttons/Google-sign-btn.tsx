@@ -27,7 +27,31 @@ export const GoogleSignBTN = () => {
     <button
       disabled={isLoading}
       onClick={LoginwithGoogle}
-      className="my-5 px-5 py-2 font-title lg:text-lg flex w-full items-center justify-center rounded-md  bg-gray-500 text-white hover:bg-gray-400 transition-transform duration-300 ease-in-out transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-md"
+      className="
+      lg:text-lg 
+      flex 
+      w-full 
+      items-center 
+      justify-center  
+      bg-gray-500 
+      text-white 
+      px-6 py-3 
+      rounded-xl 
+      font-bold 
+      font-title
+      shadow-[0_4px_6px_var(--shadow-color)]
+      transform 
+      transition 
+      duration-150 
+      ease-in-out 
+
+      hover:shadow-[0_6px_8px_var(--shadow-color)]
+      hover:-translate-y-0.5
+    hover:bg-gray-400
+
+      active:shadow-[0_2px_4px_var(--shadow-color)]
+      active:translate-y-0.5
+      "
     >
       {isLoading && <SpinIcon />}
       {!isLoading && <Image

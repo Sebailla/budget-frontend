@@ -11,7 +11,7 @@ const PostRegisterPage = () => {
             </p>
 
             <p className="p-6 text-center font-body text-md leading-normal text-inherit antialiased">
-                You will receive a 6-digit token necessary to confirm your account.
+                You will receive a 6-digit token required to confirm that you placed the order.
             </p>
 
             <p className="p-6 text-center font-body text-md leading-normal text-inherit antialiased">

@@ -19,6 +19,7 @@ const AdminPage = () => {
                 >
                     New Butget
                 </Link>
+
             </div>
         </>
     )

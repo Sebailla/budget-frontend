@@ -7,6 +7,7 @@ import { UserMenu } from './UserMenu';
 import LogoSolo from '../ui/logos/Logo';
 import Link from 'next/link';
 import { ThemeToggle } from './ThemeToggle';
+import { User } from '@/src/schemas';
 
 
 
@@ -15,16 +16,16 @@ export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {
     userName?: string;
     userEmail?: string;
     userAvatar?: string;
+    user?: User
     onUserItemClick?: (item: string) => void;
 }
 
 export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
     (
         {
-            userName = 'Sebastián Illa',
-            userEmail = 'sebastianilla77@gmail.com',
             userAvatar,
             onUserItemClick,
+            user
         }
     ) => {
         const [isMobile, setIsMobile] = useState(false);
@@ -77,8 +78,8 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
 
                         {/* User menu */}
                         <UserMenu
-                            name={userName}
-                            email={userEmail}
+                            name={user?.name}
+                            email={user?.email}
                             userAvatar={userAvatar}
                             onItemClick={onUserItemClick}
                         />

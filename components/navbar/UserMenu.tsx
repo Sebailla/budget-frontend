@@ -3,6 +3,8 @@ import { ChevronDownIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { logout } from "@/actions";
+
 
 
 export const UserMenu = ({
@@ -32,13 +34,13 @@ export const UserMenu = ({
         <DropdownMenuContent align="end" className="w-60">
             <DropdownMenuLabel>
                 <div className="flex flex-col space-y-2">
-                    <p className="text-lg font-medium leading-none">{name}</p>
+                    <p className="text-title-text text-lg font-medium leading-none">{name}</p>
                     <p className="text-xs leading-none text-[#737373]">
                         {email}
                     </p>
                 </div>
             </DropdownMenuLabel>
-            {/* <DropdownMenuSeparator /> */}
+            <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => onItemClick?.('profile')}>
                 Profile
             </DropdownMenuItem>
@@ -47,7 +49,7 @@ export const UserMenu = ({
             </DropdownMenuItem>
 
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => onItemClick?.('logout')}>
+            <DropdownMenuItem onClick={ async () => await logout()}>
                 Log out
             </DropdownMenuItem>
         </DropdownMenuContent>

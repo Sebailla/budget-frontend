@@ -1,5 +1,5 @@
 //Data Acces Layer
-
+import "server-only"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import { UserSchema } from "../schemas"

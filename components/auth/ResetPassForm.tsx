@@ -1,21 +1,20 @@
 'use client'
-
-import { useActionState, useEffect, useState } from "react"
+import { resetPassword } from "@/actions"
+import { useState, useActionState, useEffect } from "react"
+import { toast } from "react-toastify"
 import Button from "../ui/buttons/Button"
 import { FormField } from "../ui/forms/FormField"
-import { forgotPassword } from "@/actions"
-import { toast } from "react-toastify"
 import SpinIcon from "../ui/icons/spinIcon"
-import { useRouter } from "next/navigation"
+import { redirect } from "next/navigation"
 
 
-export const ForgotPass = () => {
-
-    const router = useRouter()
+export const ResetPassForm = ({ token }: { token: string }) => {
 
     const [isComplete, setIsComplete] = useState(false)
 
-    const [state, dispatch] = useActionState(forgotPassword, {
+    const resetPasswordWithToken = resetPassword.bind(null, token)
+
+    const [state, dispatch] = useActionState(resetPasswordWithToken, {
         errors: [],
         success: '',
     })
@@ -30,38 +29,45 @@ export const ForgotPass = () => {
         if (state.success) {
             toast.success(state.success)
             setIsComplete(false)
-            router.push('/auth/post-token-send-info')
+            redirect('/auth/login')
         }
-    }, [state, router])
+    }, [state])
 
-    const send = ()=>{
+    const send =()=>{
         setIsComplete(true)
     }
 
     return (
 
         <form
-            className="flex flex-col gap-4 p-6"
+            className="flex flex-col gap-4 p-6 mt-10"
+            noValidate
             action={dispatch}
         >
 
             <FormField
-                label={'Email'}
-                type="email"
-                name="email"
+                label={'Password'}
+                type="password"
+                name="password"
+            />
+
+            <FormField
+                label={'Confirm Password'}
+                type="password"
+                name="confirmPassword"
             />
 
             <Button
-                className={'btn-primary my-8'}
+                className={'btn-primary mt-10'}
                 type={"submit"}
-                name={"Send Email"}
+                name={"Save New Password"}
                 onClick={send}
             />
             {
                 isComplete &&
                 <div className="flex flex-row justify-center items-center gap-4 text-red-400 text-xl">
                     <SpinIcon />
-                    Sending ...
+                    Saving New Password ...
                 </div>
             }
 

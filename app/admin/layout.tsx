@@ -9,13 +9,13 @@ export default async function AdminLayout({
     children: React.ReactNode;
 }>) {
 
-    await verifySession()
+    const {user} = await verifySession()
 
     return (
         <>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
                 <div className="bg-primary-bg dark:bg-primary-bg">
-                    <Navbar />
+                    <Navbar user={user}/>
 
                     <section className='max-w-5xl mx-auto mt-20 p-3 py-10'>
                         {children}

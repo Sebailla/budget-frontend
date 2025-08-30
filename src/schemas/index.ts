@@ -9,7 +9,7 @@ export const RegisterSchema = z.object({
     message: 'Passwords do not match',
 })
 
-export const TokenSchema = z.string({message: 'Invalid token'}).length(6, {message: 'Invalid token'})
+export const TokenSchema = z.string({ message: 'Invalid token' }).length(6, { message: 'Invalid token' })
 
 export const LoginSchema = z.object({
     email: z.string()
@@ -30,3 +30,20 @@ export const UserSchema = z.object({
     name: z.string(),
     email: z.string().email()
 })
+
+export const ForgotPasswordSchema = z.object({
+    email: z.string()
+        .min(1, { message: 'Email address cannot be empty' })
+        .email({ message: 'Invalid email address' }),
+})
+
+export const ResetPasswordSchema = z.object({
+    password: z.string()
+        .min(8, { message: 'Password must be at least 8 characters long' }),
+    confirmPassword: z.string()
+}).refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match"
+});
+
+export type User = z.infer<typeof UserSchema>
+

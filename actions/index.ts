@@ -1,3 +1,7 @@
 export * from './createAcount.action'
 export * from './confirAccount.actions'
 export * from './loginUser.action'
+export * from './logout.action'
+export * from './forgotPass.action'
+export * from './validateResetPassToken.action'
+export * from './resetPass.action'

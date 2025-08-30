@@ -36,7 +36,7 @@ export const RegisterForm = () => {
         }
         if (state.success && state.status === 201) {
             toast.success(state.success)
-            router.push('/auth/post-register-info')
+            router.push('/auth/post-token-send-info')
         }
     }, [state, router])
 

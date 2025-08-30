@@ -3,12 +3,15 @@ import { ForgotPass, HeaderCard } from '@/components'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+
 export const metadata: Metadata = {
     title: 'Budget Tracker - Forgot password',
     description: 'Forgot password page for the Budget Tracker application',
 }
 
 const ForgotPassPage = () => {
+
+
     return (
 
         <div className="relative z-50 flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">

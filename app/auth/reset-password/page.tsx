@@ -1,4 +1,4 @@
-import { ForgotPass, HeaderCard } from "@/components"
+import { HeaderCard, PasswordResetHandler} from "@/components"
 
 const ResetPasswordPage = () => {
     return (
@@ -6,7 +6,7 @@ const ResetPasswordPage = () => {
 
             <HeaderCard title={'Reset Password'} />
 
-            <ForgotPass />
+            <PasswordResetHandler/>
 
         </div>
     )
