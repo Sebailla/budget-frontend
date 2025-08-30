@@ -26,6 +26,4 @@ export * from './ui/forms/BoxsConfirm'
 export * from './ui/forms/BoxsResetPass'
 
 export * from './ui/ToastNotification'
-export * from './navbar/NavBar'
-export * from './footer/Footer'
 
