@@ -23,7 +23,9 @@
     --error: #ef4444; /* red-500 */
 
     --border-yellow: #edef6b; /* pastel-yellow-300 */
-    --border: #d1d5db; /* gray-300 */
+    --border: #94a3b8; /* slate-400 */
+
+    --text-input: #94a3b8; /* slate-400 */
 
     --placeholder: #9ca3af; /* gray-400 */
 
@@ -68,6 +70,8 @@
     --color-border-yellow: var(--border-yellow);
     --color-placeholder: var(--placeholder);
 
+    --color-text-input: var(--text-input)
+
 /* =============================================================
     ? Fonts
 ============================================================== */
@@ -78,6 +82,7 @@
     --font-title: "Sono", sans-serif;
     --font-anuphan: "Anuphan", sans-serif;
     --font-body: "Geist", sans-serif;
+    --font-brand:"Oswald", sans-serif;
 
 /* =============================================================
     ? Colors
@@ -128,6 +133,18 @@
   --color-pastel-yellow-800: #696a0b;
   --color-pastel-yellow-900: #404107;
   --color-pastel-yellow-950: #171702;
+
+  --color-sol-50: #FEF8E6;
+--color-sol-100: #FDECBA;
+--color-sol-200: #FBE08D;
+--color-sol-300: #FBD976; /* Color referente yellow */
+--color-sol-400: #F9C834;
+--color-sol-500: #F7BB08;
+--color-sol-600: #CB9A06;
+--color-sol-700: #9E7805;
+--color-sol-800: #725604;
+--color-sol-900: #453402;
+--color-sol-950: #191301;
 
   /*? -  Pastel green 200 - */
   --color-pastel-green-50: #e8fdf3;
@@ -180,21 +197,44 @@
   --color-pastel-orange-800: #6a3c0b;
   --color-pastel-orange-900: #412507;
   --color-pastel-orange-950: #170d02;
+
+
+--color-pastel-sky-50: #E7FBFD;
+--color-pastel-sky-100: #BCF3FA;
+--color-pastel-sky-200: #91EBF7;
+--color-pastel-sky-300: #7AE7F6; /* color referente sky*/
+--color-pastel-sky-400: #3BDCF1;
+--color-pastel-sky-500: #11D5EE;
+--color-pastel-sky-600: #0EAEC4;
+--color-pastel-sky-700: #0B8899;
+--color-pastel-sky-800: #08626E;
+--color-pastel-sky-900: #053C43;
+--color-pastel-sky-950: #021518;
+
+--color-pastel-lira-50: #F7EAFB;
+--color-pastel-lira-100: #E8C4F3;
+--color-pastel-lira-200: #D797EA;
+--color-pastel-lira-300: #CA78E3; /* Color referente violet */
+--color-pastel-lira-400: #BB51DB;
+--color-pastel-lira-500: #AC2BD4;
+--color-pastel-lira-600: #8D24AE;
+--color-pastel-lira-700: #6E1C87;
+--color-pastel-lira-800: #4F1461;
+--color-pastel-lira-900: #300C3B;
+--color-pastel-lira-950: #110415; 
+
+
 }
+
 
 /* =============================================================
     ? Components
 ============================================================== */
 
-/* .btn-primary {
-    @apply rounded-md bg-pastel-yellow-200 text-gray-800 dark:text-gray-800 my-5 px-5 py-2 text-xl font-title font-bold  transition-transform duration-300 ease-in-out transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-md hover:bg-pastel-yellow-300 hover:text-gray-700 hover:border-border;
-} */
 
-.btn-primary {
+.btn {
     @apply px-6 py-3 
-    rounded-xl 
-    bg-pastel-yellow-300 
-    text-gray-800
+    rounded-xl
     lg:text-lg
     font-bold 
     font-title
@@ -206,8 +246,8 @@
 
     hover:shadow-[0_6px_8px_var(--shadow-color)]
     hover:-translate-y-0.5
-    hover:text-gray-700
 
     active:shadow-[0_2px_4px_var(--shadow-color)]
     active:translate-y-0.5
 }
+

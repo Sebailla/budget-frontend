@@ -26,7 +26,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
             userAvatar,
             onUserItemClick,
             user
-        }
+        }, ref
     ) => {
         const [isMobile, setIsMobile] = useState(false);
         const containerRef = useRef<HTMLElement>(null);
@@ -54,6 +54,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
 
         return (
             <header
+            ref={ref}
                 className=
                 'bg-secondary-bg dark:bg-secondary-bg sticky top-0 z-50 w-full backdrop-blur px-4 md:px-6 [&_*]:no-underline'
             >
@@ -66,7 +67,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                             <Link href={'#'}>
                                 <LogoSolo />
                             </Link>
-                            <span className="hidden font-bold text-4xl sm:inline-block">Budget Tracker</span>
+                            <span className="hidden font-brand font-bold text-4xl text-primary-text dark:text-primary-text sm:inline-block">Budget Tracker</span>
                         </div>
                     </div>
 

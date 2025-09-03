@@ -28,7 +28,7 @@ export const ForgotPass = () => {
             setIsComplete(false)
         }
         if (state.success) {
-            toast.success(state.success)
+            toast.success(state.success,)
             setIsComplete(false)
             router.push('/auth/post-token-send-info')
         }
@@ -52,7 +52,7 @@ export const ForgotPass = () => {
             />
 
             <Button
-                className={'btn-primary my-8'}
+                className={'btn my-8'}
                 type={"submit"}
                 name={"Send Email"}
                 onClick={send}

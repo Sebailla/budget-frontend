@@ -7,8 +7,6 @@ const geist = Geist({
   subsets: ['latin'],
 })
 
-// chivo - 
-
 export const metadata: Metadata = {
   title: "Budget Tracker",
   description: "The best web app to generate and organize your budgets",

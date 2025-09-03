@@ -45,5 +45,13 @@ export const ResetPasswordSchema = z.object({
     message: "Passwords do not match"
 });
 
+export const DraftBudgetSchema = z.object({
+    budgetName: z.string()
+        .min(1, { message: 'The Budget Name is required' }),
+    amount: z.coerce.
+        number({ message: 'Invalid quantity' })
+        .min(1, { message: 'Invalid quantity' }),
+})
+
 export type User = z.infer<typeof UserSchema>
 

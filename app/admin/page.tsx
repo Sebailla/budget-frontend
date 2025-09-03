@@ -1,5 +1,12 @@
 
+import Button from "@/components/ui/buttons/Button";
+import { Metadata } from "next";
 import Link from "next/link"
+
+export const metadata: Metadata = {
+    title: "Budget Tracker",
+    description: "Budget management page of the budget tracker app",
+};
 
 
 const AdminPage = () => {
@@ -13,11 +20,13 @@ const AdminPage = () => {
                         <span className="text-yellow-new-500">presupuestos</span>
                     </p>
                 </div>
-                <Link
-                    href={'/admin/budget/new'}
-                    className='btn-primary'
-                >
-                    New Butget
+                <Link href={'/admin/budgets/new'}>
+                    <Button
+                        type="button"
+                        className="btn"
+                        color="green"
+                        name={"New Budget"}
+                    />
                 </Link>
 
             </div>
