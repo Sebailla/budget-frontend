@@ -251,3 +251,46 @@
     active:translate-y-0.5
 }
 
+
+/* =========================
+    Underline utilities
+   ========================= */
+
+.u-underline-hover,
+.u-underline-hover-current {
+    @apply relative inline-block;
+}
+
+/* base ::after para ambas variantes */
+.u-underline-hover::after,
+.u-underline-hover-current::after {
+    content: '';
+    @apply absolute left-0 -bottom-0.5 h-[2px] w-full origin-left transform scale-x-0
+    transition-transform duration-100 ease-out;
+}
+
+/* variante fija: usa el color de título (token) */
+.u-underline-hover::after {
+    background-color: var(--color-title-text);
+}
+
+/* variante "current": sigue el color del texto */
+.u-underline-hover-current::after {
+    @apply bg-current;
+}
+
+/* activar en hover y cuando el elemento tiene foco visible (accesibilidad teclado) */
+.u-underline-hover:hover::after,
+.u-underline-hover:focus-visible::after,
+.u-underline-hover-current:hover::after,
+.u-underline-hover-current:focus-visible::after {
+    @apply scale-x-100;
+}
+
+/* respeta reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .u-underline-hover::after,
+    .u-underline-hover-current::after {
+    transition: none;
+    }
+}

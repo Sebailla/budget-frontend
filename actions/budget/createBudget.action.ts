@@ -1,7 +1,8 @@
 'use server'
 
+import getToken from "@/src/auth/token"
 import { DraftBudgetSchema } from "@/src/schemas"
-import { cookies } from "next/headers"
+
 
 interface ActionState{
     errors: string []
@@ -20,9 +21,7 @@ export const createBudget = async (prevState: ActionState, formData: FormData ) 
         }
     }
 
-    const token = (await cookies()).get('BUDGET_TOKEN')?.value
-
-    console.log(token)
+    const token = await getToken()
 
     const url = `${process.env.API_URL}/budgets`
 

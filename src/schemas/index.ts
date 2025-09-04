@@ -31,6 +31,9 @@ export const UserSchema = z.object({
     email: z.string().email()
 })
 
+export type User = z.infer<typeof UserSchema>
+
+
 export const ForgotPasswordSchema = z.object({
     email: z.string()
         .min(1, { message: 'Email address cannot be empty' })
@@ -53,5 +56,15 @@ export const DraftBudgetSchema = z.object({
         .min(1, { message: 'Invalid quantity' }),
 })
 
-export type User = z.infer<typeof UserSchema>
+export const BudgetAPIResponseSchema = z.object({
+    id: z.number(),
+    name: z.string(),
+    amount: z.string(),
+    userId: z.number(),
+    createdAt: z.string(),
+    updatedAt: z.string()
+})
 
+export const BudgetsAPIResponseSchema = z.array(BudgetAPIResponseSchema)
+
+export type BudgetId = z.infer<typeof BudgetAPIResponseSchema>

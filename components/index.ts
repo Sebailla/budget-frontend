@@ -31,3 +31,4 @@ export * from './footer/Footer'
 
 
 export * from './budgets/CreateBudgetForm'
+export * from './budgets/BudgetMenu'
