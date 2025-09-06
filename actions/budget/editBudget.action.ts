@@ -1,7 +1,7 @@
 'use server'
 
-import getToken from "@/src/auth/token"
-import { BudgetId, DraftBudgetSchema, ErrorResponseSchema } from "@/src/schemas"
+import getToken from "@/domain/auth/token"
+import { BudgetId, DraftBudgetSchema, ErrorResponseSchema } from "@/domain/schemas"
 import { revalidateTag } from "next/cache"
 
 interface ActionState {

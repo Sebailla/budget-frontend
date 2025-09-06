@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import Button from "@/components/ui/buttons/Button"
 import EditBudgetForm from "@/components/budgets/EditBudgetForm"
-import { getBudgetById } from "@/src/api/budgets"
+import { getBudgetById } from "@/domain/api/budgets"
 
 
 //? - Matadatos dinámicos

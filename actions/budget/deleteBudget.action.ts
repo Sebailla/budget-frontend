@@ -1,7 +1,7 @@
 "use server"
 
-import getToken from "@/src/auth/token"
-import { BudgetId, PassValidationSchema, SuccessSchema } from "@/src/schemas"
+import getToken from "@/domain/auth/token"
+import { BudgetId, PassValidationSchema, SuccessSchema } from "@/domain/schemas"
 
 interface ActionState {
     errors: string[]

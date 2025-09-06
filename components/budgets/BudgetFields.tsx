@@ -1,4 +1,4 @@
-import { BudgetId } from "@/src/schemas";
+import { BudgetId } from "@/domain/schemas";
 import { FormField } from "../ui/forms/FormField"
 
 interface Props {
@@ -12,6 +12,7 @@ const BudgetFields = ({color, budget}:Props) => {
             <div className="space-y-3">
                 <FormField
                     name={'budgetName'}
+                    id={'budgetName'}
                     type={"text"}
                     color={color}
                     label="Budget Name"
@@ -21,6 +22,7 @@ const BudgetFields = ({color, budget}:Props) => {
             <div className="space-y-3">
                 <FormField
                     name={'amount'}
+                    id={'amount'}
                     type={"number"}
                     color={color}
                     label="Budget Amount"

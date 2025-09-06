@@ -1,6 +1,6 @@
 'use server'
 
-import { ErrorResponseSchema, ResetPasswordSchema } from "@/src/schemas"
+import { ErrorResponseSchema, ResetPasswordSchema } from "@/domain/schemas"
 
 interface ActionState {
     errors: string[]

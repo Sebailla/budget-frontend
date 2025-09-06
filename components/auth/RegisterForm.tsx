@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation"
 const initialState = {
     errors: [],
     success: '',
+    status: undefined,
     values: {
         name: "",
         email: "",
@@ -51,6 +52,7 @@ export const RegisterForm = () => {
                 label={'Name'}
                 type="text"
                 name="name"
+                id="name"
                 defaultValue={state.values.name}
             />
 
@@ -58,6 +60,7 @@ export const RegisterForm = () => {
                 label={'Email'}
                 type="email"
                 name="email"
+                id="email"
                 defaultValue={state.values.email}
             />
 
@@ -65,6 +68,7 @@ export const RegisterForm = () => {
                 label={'Password'}
                 type="password"
                 name="password"
+                id="password"
                 defaultValue={state.values.password}
             />
 
@@ -72,6 +76,7 @@ export const RegisterForm = () => {
                 label={'Confirm Password'}
                 type="password"
                 name="confirmPassword"
+                id="confirmPassword"
                 defaultValue={state.values.confirmPassword}
             />
 

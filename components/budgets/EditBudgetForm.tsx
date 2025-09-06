@@ -1,5 +1,5 @@
 'use client'
-import { BudgetId } from "@/src/schemas"
+import { BudgetId } from "@/domain/schemas"
 import Button from "../ui/buttons/Button"
 import BudgetFields from "./BudgetFields"
 import { useActionState, useEffect } from "react"
@@ -26,14 +26,8 @@ const EditBudgetForm = ({ budget }: { budget?: BudgetId }) => {
             })
         }
         if (state.success) {
-            toast.success(state.success, {
-                onClose: () => {
-                    router.push('/admin')
-                },
-                onClick: () => {
-                    router.push('/admin')
-                }
-            })
+            toast.success(state.success)
+            router.push('/admin')
         }
     }, [state, router])
 

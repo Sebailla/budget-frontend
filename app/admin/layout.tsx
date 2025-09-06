@@ -1,5 +1,5 @@
 import { Footer, Navbar, ToastNotification } from "@/components";
-import { verifySession } from "@/src/auth/dal";
+import { verifySession } from "@/domain/auth/dal";
 import { ThemeProvider } from "next-themes";
 
 

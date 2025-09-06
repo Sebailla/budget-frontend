@@ -4,10 +4,10 @@ import * as React from 'react';
 import { useRef } from 'react';
 
 import { UserMenu } from './UserMenu';
-import LogoSolo from '../ui/logos/Logo';
 import Link from 'next/link';
 import { ThemeToggle } from './ThemeToggle';
-import { User } from '@/src/schemas';
+import { User } from '@/domain/schemas';
+import LogoSolo from '@/components/ui/logos/Logo';
 
 
 

@@ -49,12 +49,14 @@ export const ResetPassForm = ({ token }: { token: string }) => {
                 label={'Password'}
                 type="password"
                 name="password"
+                id="password"
             />
 
             <FormField
                 label={'Confirm Password'}
                 type="password"
                 name="confirmPassword"
+                id="confirmPassword"
             />
 
             <Button

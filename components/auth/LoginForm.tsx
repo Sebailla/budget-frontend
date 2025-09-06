@@ -34,12 +34,14 @@ export const LoginForm = () => {
                 label={'Email'}
                 type="email"
                 name="email"
+                id="email"
             />
 
             <FormField
                 label={'Password'}
                 type="password"
                 name="password"
+                id="password"
             />
 
             <CheckBox />

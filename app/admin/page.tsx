@@ -2,8 +2,8 @@
 import BudgetMenu from "@/components/budgets/BudgetMenu";
 import DeleteBudgetModal from "@/components/budgets/DeleteBudgetModal";
 import Button from "@/components/ui/buttons/Button";
-import { getUserBudget } from "@/src/api/budgets";
-import { currencyFormat, dateFormat } from "@/src/utils";
+import { getUserBudget } from "@/domain/api/budgets";
+import { currencyFormat, dateFormat } from "@/domain/utils";
 import { Metadata } from "next";
 import Link from "next/link"
 

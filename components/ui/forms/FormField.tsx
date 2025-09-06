@@ -8,7 +8,7 @@ interface FormFieldProps {
     className?: string
     type?: string;
     defaultValue?: string;
-    id: string
+    id?: string
     color?: "yellow" | "rose" | "sky" | "lira" | "green" | "red";
 }
 

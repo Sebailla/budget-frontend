@@ -49,6 +49,7 @@ export const ForgotPass = () => {
                 label={'Email'}
                 type="email"
                 name="email"
+                id="email"
             />
 
             <Button

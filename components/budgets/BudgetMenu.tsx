@@ -3,7 +3,7 @@ import { Fragment } from "react"
 import Link from "next/link"
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from "@headlessui/react"
 import { EllipsisHorizontalIcon} from "@heroicons/react/20/solid"
-import { BudgetId } from "@/src/schemas"
+import { BudgetId } from "@/domain/schemas"
 import { useRouter } from "next/navigation"
 
 export default function BudgetMenu({budgetId}: {budgetId: BudgetId['id']}) {

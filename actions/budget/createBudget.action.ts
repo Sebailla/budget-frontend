@@ -1,7 +1,7 @@
 'use server'
 
-import getToken from "@/src/auth/token"
-import { DraftBudgetSchema } from "@/src/schemas"
+import getToken from "@/domain/auth/token"
+import { DraftBudgetSchema } from "@/domain/schemas"
 
 
 interface ActionState{
