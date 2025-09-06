@@ -7,10 +7,10 @@ export const ToastNotification = () => {
     return (
         <ToastContainer
             position="top-center"
-            autoClose={2000}
+            autoClose={1000}
             hideProgressBar
             newestOnTop={false}
-            closeOnClick={false}
+            closeOnClick={true}
             rtl={false}
             pauseOnFocusLoss
             draggable

@@ -7,7 +7,7 @@ const CreateBudgetPage = () => {
         <>
             <div className='flex flex-col-reverse md:flex-row md:justify-between items-center'>
                 <div className='w-full md:w-auto'>
-                    <h1 className='font-black text-5xl text-pastel-rose-200 my-5'>
+                    <h1 className='font-black text-5xl text-pastel-lira-400 my-5'>
                         New Budget
                     </h1>
                 </div>
@@ -15,7 +15,7 @@ const CreateBudgetPage = () => {
                     <Button
                         type="button"
                         className="btn"
-                        color="yellow"
+                        color="lira"
                         name={"Back"}
                     />
                 </Link>
@@ -29,8 +29,8 @@ const CreateBudgetPage = () => {
                 <Button
                     type="button"
                     className="btn"
-                    color="lira"
-                    name={"Lira"}
+                    color="yellow"
+                    name={"yellow"}
                 />
                 <Button
                     type="button"
@@ -47,7 +47,7 @@ const CreateBudgetPage = () => {
 
             </div>
 
-            <div className='p-10 mt-10  shadow-lg border border-pastel-rose-100 rounded-xl '>
+            <div className='p-10 mt-10  shadow-lg border border-pastel-lira-100 rounded-xl '>
                 <CreateBudgetForm />
             </div>
         </>

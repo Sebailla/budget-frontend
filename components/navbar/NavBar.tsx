@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useEffect, useState, useRef } from 'react';
+import { useRef } from 'react';
 
 import { UserMenu } from './UserMenu';
 import LogoSolo from '../ui/logos/Logo';
@@ -28,35 +28,12 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
             user
         }, ref
     ) => {
-        const [isMobile, setIsMobile] = useState(false);
         const containerRef = useRef<HTMLElement>(null);
-
-
-        useEffect(() => {
-            const checkWidth = () => {
-                if (containerRef.current) {
-                    const width = containerRef.current.offsetWidth;
-                    setIsMobile(width < 768); // 768px is md breakpoint
-                }
-            };
-
-            checkWidth();
-
-            const resizeObserver = new ResizeObserver(checkWidth);
-            if (containerRef.current) {
-                resizeObserver.observe(containerRef.current);
-            }
-
-            return () => {
-                resizeObserver.disconnect();
-            };
-        }, []);
 
         return (
             <header
-            ref={ref}
-                className=
-                'bg-secondary-bg dark:bg-secondary-bg sticky top-0 z-50 w-full backdrop-blur px-4 md:px-6 [&_*]:no-underline'
+                ref={ref}
+                className='sticky top-0 z-50 w-full backdrop-blur-xs bg-[rgba(0,0,0,0.1)] dark:bg-[rgba(20,20,20,0.4)] px-4 md:px-6 [&_*]:no-underline'
             >
                 <div className="container mx-auto flex h-32 max-w-screen-2xl items-center justify-between gap-4">
                     {/* Left side */}
@@ -90,7 +67,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                     </div>
                 </div>
             </header>
-        );
+        )
     }
 );
 

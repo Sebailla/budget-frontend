@@ -14,7 +14,7 @@ export default async function AdminLayout({
     return (
         <>
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-                <div className="bg-primary-bg dark:bg-primary-bg">
+                <div className="">
                     <Navbar user={user}/>
 
                     <section className='max-w-5xl mx-auto mt-20 p-3 py-10'>

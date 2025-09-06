@@ -2,16 +2,19 @@
 import { Fragment } from "react"
 import Link from "next/link"
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from "@headlessui/react"
-import { EllipsisVerticalIcon } from "@heroicons/react/20/solid"
+import { EllipsisHorizontalIcon} from "@heroicons/react/20/solid"
 import { BudgetId } from "@/src/schemas"
+import { useRouter } from "next/navigation"
 
 export default function BudgetMenu({budgetId}: {budgetId: BudgetId['id']}) {
+
+    const router = useRouter()
     return (
         <>
             <Menu as="div" className="relative flex-none">
-                <MenuButton className="-m-2.5 block p-2.5 text-gray-500 hover:text-gray-900">
+                <MenuButton className="-m-2.5 block p-1 text-gray-500 hover:text-gray-900 border-2 border-transparent border-b-gray-200">
                     <span className="sr-only">opciones</span>
-                    <EllipsisVerticalIcon className="h-9 w-9" aria-hidden="true" />
+                    <EllipsisHorizontalIcon className="h-9 w-9 md:w-15 lg:w-18" aria-hidden="true" />
                 </MenuButton>
                 <Transition
                     as={Fragment}
@@ -33,7 +36,7 @@ export default function BudgetMenu({budgetId}: {budgetId: BudgetId['id']}) {
                         </MenuItem>
                         <MenuItem>
                             <Link
-                                href={`/admin/budgets/${budgetId}`}
+                                href={`/admin/budgets/${budgetId}/edit`}
                                 className='block px-3 py-1 text-sm leading-6 text-gray-900'
                             >
                                 Edit
@@ -43,8 +46,8 @@ export default function BudgetMenu({budgetId}: {budgetId: BudgetId['id']}) {
                         <MenuItem>
                             <button
                                 type='button'
-                                className='block px-3 py-1 text-sm leading-6 text-red-500'
-                                onClick={() => { }}
+                                className='block px-3 py-1 text-sm leading-6 text-pastel-red-300'
+                                onClick={() => router.push(`?deleteBudgetId=${budgetId}`)}
                             >
                                 Delete
                             </button>

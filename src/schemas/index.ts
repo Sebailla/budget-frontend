@@ -19,7 +19,7 @@ export const LoginSchema = z.object({
         .min(1, { message: 'Password cannot be empty' })
 })
 
-export const ErrorPesponseSchema = z.object({
+export const ErrorResponseSchema = z.object({
     error: z.string()
 })
 
@@ -66,5 +66,7 @@ export const BudgetAPIResponseSchema = z.object({
 })
 
 export const BudgetsAPIResponseSchema = z.array(BudgetAPIResponseSchema)
+
+export const PassValidationSchema = z.string().min(1,{message: 'Invalid Password'})
 
 export type BudgetId = z.infer<typeof BudgetAPIResponseSchema>

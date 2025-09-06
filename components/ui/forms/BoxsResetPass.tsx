@@ -47,7 +47,7 @@ export const BoxsResetPass = ({setIsValidToken, token, setToken}:BoxsResetPassPr
             })
         }
 
-    }, [state])
+    }, [state, setIsValidToken])
 
     const handleChange = (token: string) => {
         setIsComplete(false)

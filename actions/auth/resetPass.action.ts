@@ -1,6 +1,6 @@
 'use server'
 
-import { ErrorPesponseSchema, ResetPasswordSchema } from "@/src/schemas"
+import { ErrorResponseSchema, ResetPasswordSchema } from "@/src/schemas"
 
 interface ActionState {
     errors: string[]
@@ -42,7 +42,7 @@ export const resetPassword = async (token: string, prevState: ActionState, formD
     console.log(json.ok)
 
     if(!req.ok){
-        const {error} = ErrorPesponseSchema.parse(json)
+        const {error} = ErrorResponseSchema.parse(json)
         return{
             errors: [error],
             success: ''

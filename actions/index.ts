@@ -7,3 +7,5 @@ export * from './auth/validateResetPassToken.action'
 export * from './auth/resetPass.action'
 
 export * from './budget/createBudget.action'
+export * from './budget/editBudget.action'
+export * from './budget/deleteBudget.action'

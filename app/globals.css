@@ -223,6 +223,22 @@
 --color-pastel-lira-900: #300C3B;
 --color-pastel-lira-950: #110415; 
 
+--color-pastel-red-50: #FEEBE7;
+--color-pastel-red-100: #FCC6BB;
+--color-pastel-red-200: #FAA18F;
+--color-pastel-red-300: #F87C63;
+--color-pastel-red-400: #F65737;
+--color-pastel-red-500: #F4320B;
+--color-pastel-red-600: #C82909;
+--color-pastel-red-700: #9C2007;
+--color-pastel-red-800: #440E03;
+--color-pastel-red-900: #440E03;
+
+
+--color-pastel-lightblue-300: #63DFF8;
+
+--color-fluor-yellow-300: #DFF863;
+
 
 }
 
@@ -234,7 +250,7 @@
 
 .btn {
     @apply px-6 py-3 
-    rounded-xl
+    rounded-full
     lg:text-lg
     font-bold 
     font-title

@@ -32,3 +32,7 @@ export * from './footer/Footer'
 
 export * from './budgets/CreateBudgetForm'
 export * from './budgets/BudgetMenu'
+export * from './budgets/BudgetFields'
+export * from './budgets/EditBudgetForm'
+export * from './budgets/DeleteBudgetModal'
+export * from './budgets/ConfirmPasswordForm'

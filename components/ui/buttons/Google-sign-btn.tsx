@@ -16,7 +16,7 @@ export const GoogleSignBTN = () => {
       setTimeout(() => {
         setIsLoading(false);
       }, 2000);
-    } catch (error) {
+    } catch {
       setIsLoading(false);
     } /* finally {
       setIsLoading(false);

@@ -2,11 +2,11 @@
 
 import { useActionState, useEffect } from "react"
 import Button from "../ui/buttons/Button"
-import { FormField } from "../ui/forms/FormField"
 import { createBudget } from "@/actions"
 import { toast } from "react-toastify"
 import { ToastNotification } from "../ui/ToastNotification"
 import { useRouter } from "next/navigation"
+import BudgetFields from "./BudgetFields"
 
 const CreateBudgetForm = () => {
 
@@ -24,14 +24,8 @@ const CreateBudgetForm = () => {
             })
         }
         if(state.success){
-            toast.success(state.success,{
-                onClose: ()=>{
-                    router.push('/admin')
-                },
-                onClick: ()=>{
-                    router.push('/admin')
-                }
-            })
+            toast.success(state.success)
+            router.push('/admin')
         }
 
     }, [state, router])
@@ -42,26 +36,11 @@ const CreateBudgetForm = () => {
             noValidate
             action={dispatch}
         >
-            <div className="space-y-3">
-                <FormField
-                    name={'budgetName'}
-                    type={"text"}
-                    color="rose"
-                    label="Budget Name"
-                />
-            </div>
-            <div className="space-y-3">
-                <FormField
-                    name={'amount'}
-                    type={"number"}
-                    color="rose"
-                    label="Budget Amount"
-                />
-            </div>
+            <BudgetFields color={'lira'}/>
             <Button
                 type="submit"
                 className="btn w-full"
-                color="rose"
+                color="lira"
                 name={"Create New Budget"}
             />
             <ToastNotification/>
