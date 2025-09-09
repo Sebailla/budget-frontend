@@ -6,7 +6,8 @@ import { createBudget } from "@/actions"
 import { toast } from "react-toastify"
 import { ToastNotification } from "../ui/ToastNotification"
 import { useRouter } from "next/navigation"
-import BudgetFields from "./BudgetFields"
+import BudgetFields from "./ui/BudgetFields"
+
 
 const CreateBudgetForm = () => {
 

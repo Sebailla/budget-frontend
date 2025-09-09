@@ -9,3 +9,6 @@ export * from './auth/resetPass.action'
 export * from './budget/createBudget.action'
 export * from './budget/editBudget.action'
 export * from './budget/deleteBudget.action'
+
+export * from './expense/createExpenses.action'
+export * from './expense/editExpense.action'

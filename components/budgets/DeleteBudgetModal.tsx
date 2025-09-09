@@ -35,7 +35,7 @@ export default function DeleteBudgetModal() {
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
                         >
-                            <div className="fixed inset-0 bg-[rgba(0,0,0,0.1)]" />
+                            <div className="fixed inset-0 bg-[rgba(0,0,0,0.2)]" />
                         </TransitionChild>
 
                         <div className="fixed inset-0 overflow-y-auto">

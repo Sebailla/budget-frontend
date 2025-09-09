@@ -31,9 +31,6 @@ export const UserSchema = z.object({
     email: z.string().email()
 })
 
-export type User = z.infer<typeof UserSchema>
-
-
 export const ForgotPasswordSchema = z.object({
     email: z.string()
         .min(1, { message: 'Email address cannot be empty' })
@@ -56,17 +53,49 @@ export const DraftBudgetSchema = z.object({
         .min(1, { message: 'Invalid quantity' }),
 })
 
+export const DraftExpensSchema = z.object({
+    name: z.string()
+        .min(1, { message: 'The Expense Name is required' }),
+    amount: z.coerce.
+        number({ message: 'Invalid amount' })
+        .min(1, { message: 'Invalid amount' }),
+})
+
+export const ExpenseAPIResponseSchema = z.object({
+    id: z.number(),
+    name: z.string(),
+    amount: z.string(),
+    createdAt: z.string(),
+    updatedAt: z.string(),
+    budgetId: z.number()
+})
+
 export const BudgetAPIResponseSchema = z.object({
     id: z.number(),
     name: z.string(),
     amount: z.string(),
     userId: z.number(),
     createdAt: z.string(),
-    updatedAt: z.string()
+    updatedAt: z.string(),
+    expenses: z.array(ExpenseAPIResponseSchema)
 })
 
-export const BudgetsAPIResponseSchema = z.array(BudgetAPIResponseSchema)
+export const BudgetsAPIResponseSchema = z.array(BudgetAPIResponseSchema.omit({expenses: true}))
 
-export const PassValidationSchema = z.string().min(1,{message: 'Invalid Password'})
+export const PassValidationSchema = z.string().min(1, { message: 'Invalid Password' })
 
+export const CreateExpenseSchema = z.object({
+    name: z.string()
+        .min(1, { message: 'The Expense Name is required' }),
+    amount: z.coerce.
+        number({ message: 'Invalid amount' })
+        .min(1, { message: 'Invalid amount' }),
+})
+
+//? Types infer ----------------------------------------------
+
+export type User = z.infer<typeof UserSchema>
 export type BudgetId = z.infer<typeof BudgetAPIResponseSchema>
+export type Expense = z.infer<typeof ExpenseAPIResponseSchema>
+export type DraftExpense = z.infer<typeof DraftExpensSchema>
+

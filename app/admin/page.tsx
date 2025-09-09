@@ -1,6 +1,6 @@
 
-import BudgetMenu from "@/components/budgets/BudgetMenu";
 import DeleteBudgetModal from "@/components/budgets/DeleteBudgetModal";
+import BudgetMenu from "@/components/budgets/ui/BudgetMenu";
 import Button from "@/components/ui/buttons/Button";
 import { getUserBudget } from "@/domain/api/budgets";
 import { currencyFormat, dateFormat } from "@/domain/utils";
@@ -41,7 +41,7 @@ const AdminPage = async () => {
                             <article role="list" className=" mt-10 w-full">
                                 {budgets.map((budget) => (
                                     <div key={budget.id}>
-                                        <section  className="flex justify-between p-5 my-5 border border-gray-100 rounded-xl shadow-md">
+                                        <section className="flex justify-between p-5 my-5 border border-gray-100 rounded-xl shadow-md">
                                             <div className="flex min-w-11/12 gap-x-4">
                                                 <div className="min-w-0 flex-auto space-y-2">
                                                     <p className="text-sm font-semibold leading-6 text-gray-900 border-2 border-transparent border-b-gray-200 pb-2.5">

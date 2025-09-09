@@ -1,6 +1,9 @@
-import { Footer, Navbar, ToastNotification } from "@/components";
+import { Footer, Navbar} from "@/components";
+import Notifications from "@/components/layout/Notifications";
 import { verifySession } from "@/domain/auth/dal";
+import { SessionProvider } from "@/domain/context/SessionContext";
 import { ThemeProvider } from "next-themes";
+
 
 
 export default async function AdminLayout({
@@ -9,24 +12,27 @@ export default async function AdminLayout({
     children: React.ReactNode;
 }>) {
 
-    const {user} = await verifySession()
+    const { user } = await verifySession()
 
     return (
         <>
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-                <div className="">
-                    <Navbar user={user}/>
+                <SessionProvider>
+                    <div className="">
+                        <Navbar user={user} />
 
-                    <section className='max-w-5xl mx-auto mt-20 p-3 py-10'>
-                        {children}
-                    </section>
+                        <section className='max-w-5xl mx-auto mt-20 p-3 py-10'>
+                            {children}
+                        </section>
 
-                    <Footer />
+                        <Footer />
 
-                    <ToastNotification />
-                </div>
-
-            </ThemeProvider>
+                        {/* <ToastNotification /> */}
+                    </div>
+                    {/* <Toaster position="top-right" /> */}
+                    <Notifications/>
+                </SessionProvider>
+            </ThemeProvider >
         </>
     );
 }

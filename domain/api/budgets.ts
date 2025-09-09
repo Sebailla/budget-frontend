@@ -26,24 +26,40 @@ export const getBudgetById = cache(async (budgetId: string) => {
     return budget
 })
 
+
 export async function getUserBudget() {
+    const token = await getToken();
+    if (!token) {
+        window.location.href = '/auth/login';
+        return;
+    }
 
-    const token = await getToken()
-
-    const url = `${process.env.API_URL}/budgets`
-
+    const url = `${process.env.API_URL}/budgets`;
     const req = await fetch(url, {
         headers: {
-            "Authorization": `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
         },
-        next: {
-            tags: ['all-budgets']
-        }
-    })
+    });
 
-    const json = await req.json()
+    if (req.status === 401) {
+        // Token expirado o inválido
+        window.location.href = '/auth/login';
+        return;
+    }
 
-    const budgets = BudgetsAPIResponseSchema.parse(json.data)
+    const json = await req.json();
 
-    return budgets
+    if (!json.data) {
+        console.error('No budget data received', json);
+        window.location.href = '/auth/login';
+        return;
+    }
+
+    try {
+        const budgets = BudgetsAPIResponseSchema.parse(json.data);
+        return budgets;
+    } catch (err) {
+        console.error('Error validating budgets', err);
+        return [];
+    }
 }

@@ -1,5 +1,6 @@
+import { FormField } from "@/components/ui/forms/FormField";
 import { BudgetId } from "@/domain/schemas";
-import { FormField } from "../ui/forms/FormField"
+
 
 interface Props {
     color?: "yellow" | "rose" | "sky" | "lira" | "green"

@@ -1,11 +1,11 @@
 'use client'
 import { BudgetId } from "@/domain/schemas"
 import Button from "../ui/buttons/Button"
-import BudgetFields from "./BudgetFields"
 import { useActionState, useEffect } from "react"
 import { editBudget } from "@/actions"
 import { toast } from "react-toastify"
 import { useRouter } from "next/navigation"
+import BudgetFields from "./ui/BudgetFields"
 
 
 const EditBudgetForm = ({ budget }: { budget?: BudgetId }) => {
