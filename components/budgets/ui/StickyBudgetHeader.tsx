@@ -24,7 +24,7 @@ interface StickyHeaderProps {
 export default function StickyHeader({
     title,
     subTitle,
-    topOffsetPx = 64,
+    topOffsetPx = 80, // = h-20 en tailwindcss
     subTitlleAccent,
     note,
     rightContent,
@@ -77,7 +77,7 @@ export default function StickyHeader({
                             className="overflow-hidden"
                             aria-hidden={stuck}
                         >
-                            <p className="text-xl font-bold">
+                            <p className={`text-xl font-bold ${subTitleColor || 'text-gray-500'}`}>
                                 {subTitle} {" "}
                                 <span className={`${subTitleAccentColor || 'text-cyan-500'}`}>{subTitlleAccent}</span>
                             </p>

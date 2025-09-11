@@ -5,8 +5,8 @@ const LogoSolo = () => {
         <Image
             src='/logo_Solo.svg'
             alt='Logo Budget tracker'
-            width={80}
-            height={80}
+            width={64}
+            height={64}
             priority={true}
         />
     )

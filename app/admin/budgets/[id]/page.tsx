@@ -36,7 +36,7 @@ const BudgetDetailPage = async ({ params }: { params: Promise<{ id: string }> })
             {/* topOffsetPx: ajustalo según la altura de tu navbar (en px) */}
             <StickyBudgetHeader
                 title={budget.name}
-                topOffsetPx={128}
+                topOffsetPx={80}
                 subTitle={'Admin your'}
                 subTitlleAccent={'expenses'}
                 note={'Expenses in this budget'}

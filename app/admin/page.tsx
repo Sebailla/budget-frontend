@@ -23,7 +23,7 @@ const AdminPage = async () => {
             {/* topOffsetPx: ajustalo según la altura de tu navbar (en px) */}
             <StickyBudgetHeader
                 title='My Budgets'
-                topOffsetPx={128}
+                topOffsetPx={80}
                 subTitle={'Manage and administer your'}
                 subTitlleAccent={'budgets'}
                 titleColor={"text-pastel-green-600"}
