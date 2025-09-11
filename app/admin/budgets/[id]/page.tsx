@@ -5,6 +5,7 @@ import Button from "@/components/ui/buttons/Button"
 import { getBudgetById } from "@/domain/api/budgets"
 import { currencyFormat, dateFormat } from "@/domain/utils"
 import { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 
 
@@ -154,7 +155,7 @@ const BudgetDetailPage = async ({ params }: { params: Promise<{ id: string }> })
                                         <td className="p-4 border-b border-blue-gray-50">
                                             <div className="flex items-center gap-3">
                                                 <div className="h-9 w-12 rounded-md border border-blue-gray-50 p-1">
-                                                    <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/visa.png" alt="visa" className="inline-block relative object-center rounded-md h-full w-full object-contain p-1" />
+                                                    <Image src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/visa.png" alt="visa" className="inline-block relative object-center rounded-md h-full w-full object-contain p-1" width={50} height={50} />
                                                 </div>
                                                 <div className="flex flex-col">
                                                     <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal capitalize">visa

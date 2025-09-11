@@ -3,7 +3,7 @@
 import { useParams, useSearchParams } from "next/navigation";
 import { DialogTitle } from "@headlessui/react";
 import Button from "../ui/buttons/Button";
-import { useActionState, useEffect } from "react";
+import { startTransition, useActionState, useEffect } from "react";
 import { deleteExpense } from "@/actions";
 import { ErrorMsg } from "../ui/forms/ErrorMsg";
 import toast from "react-hot-toast";
@@ -30,14 +30,14 @@ export default function DeleteExpenseForm({ closeModal }: DeleteExpenseForm) {
         if (!Number.isInteger(+budgetId) || !Number.isInteger(+expenseId)) {
             closeModal()
         }
-    }, [])
+    }, [budgetId, expenseId, closeModal])
 
     useEffect(()=>{
         if(state.success){
             toast.success(state.success)
             closeModal()
         }
-    },[state])
+    },[state, closeModal])
 
 
     return (
@@ -61,7 +61,9 @@ export default function DeleteExpenseForm({ closeModal }: DeleteExpenseForm) {
                     color="red"
                     name="Delete"
                     type="submit"
-                    onClick={()=>{dispatch()}}
+                    onClick={() => startTransition(() => {
+                        dispatch()
+                    })}
                 />
                 <Button
                     className="ntb"
