@@ -1,6 +1,7 @@
 
 import DeleteBudgetModal from "@/components/budgets/DeleteBudgetModal";
 import BudgetMenu from "@/components/budgets/ui/BudgetMenu";
+import StickyBudgetHeader from "@/components/budgets/ui/StickyBudgetHeader";
 import Button from "@/components/ui/buttons/Button";
 import { getUserBudget } from "@/domain/api/budgets";
 import { currencyFormat, dateFormat } from "@/domain/utils";
@@ -18,22 +19,29 @@ const AdminPage = async () => {
 
     return (
         <>
-            <section className='flex flex-col-reverse md:flex-row md:justify-between items-center'>
-                <div className='w-full md:w-auto'>
-                    <h1 className="font-black text-4xl text-pastel-green-600 my-5">My Budgets</h1>
-                    <p className="text-primary-text text-xl font-bold dark:text-primary-text">Maneja y administra tus {''}
-                        <span className="text-yellow-new-500">presupuestos</span>
-                    </p>
-                </div>
-                <Link href={'/admin/budgets/new'}>
-                    <Button
-                        type="button"
-                        className="btn"
-                        color="green"
-                        name={"New Budget"}
-                    />
-                </Link>
-            </section>
+
+            {/* topOffsetPx: ajustalo según la altura de tu navbar (en px) */}
+            <StickyBudgetHeader
+                title='My Budgets'
+                topOffsetPx={128}
+                subTitle={'Manage and administer your'}
+                subTitlleAccent={'budgets'}
+                titleColor={"text-pastel-green-600"}
+                subTitleAccentColor={"text-amber-500"}
+                rightContent={
+                    <>
+                        <Link href={'/admin/budgets/new'}>
+                            <Button
+                                type="button"
+                                className="btn"
+                                color="green"
+                                name={"New Budget"}
+                            />
+                        </Link>
+                    </>
+                }
+            />
+
             <section className="flex flex-col justify-center items-center w-full">
                 {
                     budgets.length ?
