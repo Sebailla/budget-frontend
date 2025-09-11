@@ -1,7 +1,7 @@
 
 import DeleteBudgetModal from "@/components/budgets/DeleteBudgetModal";
 import BudgetMenu from "@/components/budgets/ui/BudgetMenu";
-import StickyBudgetHeader from "@/components/budgets/ui/StickyBudgetHeader";
+import StickyHeader from "@/components/layout/StickyHeader";
 import Button from "@/components/ui/buttons/Button";
 import { getUserBudget } from "@/domain/api/budgets";
 import { currencyFormat, dateFormat } from "@/domain/utils";
@@ -21,7 +21,7 @@ const AdminPage = async () => {
         <>
 
             {/* topOffsetPx: ajustalo según la altura de tu navbar (en px) */}
-            <StickyBudgetHeader
+            <StickyHeader
                 title='My Budgets'
                 topOffsetPx={80}
                 subTitle={'Manage and administer your'}

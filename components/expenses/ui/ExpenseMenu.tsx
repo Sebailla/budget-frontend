@@ -11,7 +11,7 @@ export default function ExpenseMenu({ expenseId }: { expenseId: Expense['id'] })
 
     return (
         <>
-            <Menu as="div" className="relative flex-none">
+            <Menu as="div" className="relative flex justify-end">
                 <MenuButton className="-m-2.5 block p-1 text-gray-500 hover:text-gray-900">
                     <span className="sr-only">opciones</span>
                     <EllipsisHorizontalIcon className="h-9 w-9 md:w-15 lg:w-18" aria-hidden="true" />
