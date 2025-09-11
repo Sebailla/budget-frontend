@@ -5,12 +5,12 @@ import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import { Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react';
 import AddExpensesForm from '../expenses/AddExpensesForm';
 import EditExpensesForm from '../expenses/EditExpensesForm';
-import DeleteExpensesForm from '../expenses/DeleteExpensesForm';
+import DeleteExpenseForm from '../expenses/DeleteExpenseForm';
 
 const componentsMap = {
     'AddExpense' : AddExpensesForm,
     'EditExpense': EditExpensesForm,
-    'DeleteExpense': DeleteExpensesForm,
+    'DeleteExpense': DeleteExpenseForm,
 }
 
 export default function ModalContainer() {

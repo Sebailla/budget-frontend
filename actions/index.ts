@@ -12,3 +12,4 @@ export * from './budget/deleteBudget.action'
 
 export * from './expense/createExpenses.action'
 export * from './expense/editExpense.action'
+export * from './expense/deleteExpense.action'

@@ -1,6 +1,6 @@
 import { cache } from "react"
 import getToken from "../auth/token"
-import { notFound } from "next/navigation"
+import { notFound, redirect } from "next/navigation"
 import { BudgetAPIResponseSchema, BudgetsAPIResponseSchema } from "../schemas"
 
 export const getBudgetById = cache(async (budgetId: string) => {
@@ -43,16 +43,14 @@ export async function getUserBudget() {
 
     if (req.status === 401) {
         // Token expirado o inválido
-        window.location.href = '/auth/login';
-        return;
+        redirect("/auth/login");
     }
 
     const json = await req.json();
 
     if (!json.data) {
         console.error('No budget data received', json);
-        window.location.href = '/auth/login';
-        return;
+        redirect("/auth/login")
     }
 
     try {
