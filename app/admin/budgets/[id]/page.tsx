@@ -10,6 +10,8 @@ import Image from "next/image"
 import Link from "next/link"
 import StickyHeader from "@/components/layout/StickyHeader"
 import TableStickyHeader from "@/components/expenses/ui/TableStickyHeader"
+import Amounts from "@/components/expenses/ui/Amounts"
+import Graphic from "@/components/expenses/ui/Graphic"
 
 
 
@@ -33,6 +35,12 @@ const BudgetDetailPage = async ({ params }: { params: Promise<{ id: string }> })
 
     const budget = await getBudgetById(id)
 
+    //Operaciones Contables:
+
+    const totalSpent = budget.expenses.reduce((total, expense) => +expense.amount + total, 0)
+    const totalAvaible = +budget.amount - totalSpent
+    const percentage = +((totalSpent / +budget.amount) * 100).toFixed(2)
+
     return (
         <>
             {/* topOffsetPx: ajustalo según la altura de tu navbar (en px) */}
@@ -55,18 +63,37 @@ const BudgetDetailPage = async ({ params }: { params: Promise<{ id: string }> })
                 }
             />
 
-            <TableStickyHeader topOffsetPx={204} />
-
             {
                 budget.expenses.length ?
                     (
                         <>
+
+                            <div className="grid grid-col-1 md:grid-cols-2 my-10">
+
+                                <Graphic percentage={percentage} />
+
+                                <div className="flex flex-col justify-center items-center md:items-start gap-5">
+                                    <Amounts label={'Budget'} amount={+budget.amount} />
+                                    {
+                                        totalAvaible < 0 ? <Amounts label={'Available'} amount={0} /> : <Amounts label={'Available'} amount={totalAvaible} color={'text-pastel-green-600'} />
+                                    }
+                                    <Amounts label={'Spent'} amount={totalSpent} />
+                                    {
+                                        percentage > 100 && <Amounts label={'Deficit'} amount={totalAvaible} />
+                                    }
+                                </div>
+                            </div>
+
+                            {
+                                budget.expenses.length !== 0 && <TableStickyHeader topOffsetPx={204} />
+                            }
+
                             <article role="list" className="mt-10 w-full">
                                 {budget.expenses.map((expense) => (
                                     <div key={expense.id}>
                                         <div className="flex items-center border border-gray-100 rounded-xl shadow-md p-5 my-5 w-full">
 
-                                            <p className="w-4/12 text-left font-sans text-sm font-bold text-gray-900">
+                                            <p className="w-4/12 text-left font-sans text-sm font-bold text-gray-900 ">
                                                 {expense.name}
                                             </p>
 
@@ -111,12 +138,12 @@ const BudgetDetailPage = async ({ params }: { params: Promise<{ id: string }> })
                         </>
                     ) :
                     (
-                        <p className="text-center py-20">There are no expenses yet</p>
+                        <p className="text-xl text-center py-20">There are no expenses yet</p>
                     )
             }
 
             <ModalContainer />
-            
+
         </>
     )
 }

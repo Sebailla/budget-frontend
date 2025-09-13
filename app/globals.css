@@ -83,6 +83,8 @@
     --font-anuphan: "Anuphan", sans-serif;
     --font-body: "Geist", sans-serif;
     --font-brand:"Oswald", sans-serif;
+    --font-sans: "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "Fira Code", monospace;
 
 /* =============================================================
     ? Colors
@@ -239,6 +241,28 @@
 
 --color-fluor-yellow-300: #DFF863;
 
+/* 
+
+
+#ffae62
+#399ca1
+#fb4f14
+
+#c1ec76  verde manzana del button
+#ec6161    rojo pastel
+
+#f9f9f9
+#CA78E3
+#222222   negro texto
+
+Pateles:
+#c9facd
+#ffe7da
+#d0f2fe
+#fff8ce 
+
+*/
+
 
 }
 
@@ -252,7 +276,7 @@
     @apply px-6 py-3 
     rounded-full
     lg:text-lg
-    font-bold 
+    font-bold
     font-title
     shadow-[0_4px_6px_var(--shadow-color)]
     transform 
@@ -262,10 +286,12 @@
 
     hover:shadow-[0_6px_8px_var(--shadow-color)]
     hover:-translate-y-0.5
+    /* hover:ring-2 ring-offset-2 ring-[#c1ec76] */
 
     active:shadow-[0_2px_4px_var(--shadow-color)]
     active:translate-y-0.5
 }
+
 
 
 /* =========================
@@ -311,6 +337,10 @@
     }
 }
 
+
+/* =========================
+    Toast utilities
+   ========================= */
 
 /* Animación personalizada para los toasts */
 @keyframes toast-enter {

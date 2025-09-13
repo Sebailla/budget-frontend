@@ -22,7 +22,7 @@ export default function TableStickyHeader({
 
             {/* sticky: usamos style.top dinámico para que puedas ajustar según tu navbar */}
             <div
-                className={`sticky z-5 `}
+                className={`sticky z-1 `}
                 style={{ top: topOffsetPx }}
                 aria-hidden={false}
             >
