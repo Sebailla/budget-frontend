@@ -13,3 +13,6 @@ export * from './budget/deleteBudget.action'
 export * from './expense/createExpenses.action'
 export * from './expense/editExpense.action'
 export * from './expense/deleteExpense.action'
+
+export * from './profile/updatePassword.action'
+export * from './profile/updateUser.action'

@@ -50,3 +50,8 @@ export * from './expenses/EditExpensesForm'
 export * from './expenses/DeleteExpenseForm'
 export * from './expenses/ExpenseForm'
 
+export * from './profile/ProfileTabs'
+export * from './profile/ChangePasswordForm'
+export * from './profile/ProfileForm'
+
+

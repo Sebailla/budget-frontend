@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { logout } from "@/actions";
+import Link from "next/link";
 
 
 
@@ -42,14 +43,18 @@ export const UserMenu = ({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => onItemClick?.('profile')}>
-                Profile
+                <Link href={'/admin/profile/settings'} className="w-full">
+                    Settings
+                </Link>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => onItemClick?.('settings')}>
-                Budgets
+                <Link href={'/admin'} className="w-full">
+                    Budgets
+                </Link>
             </DropdownMenuItem>
 
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={ async () => await logout()}>
+            <DropdownMenuItem onClick={async () => await logout()}>
                 Log out
             </DropdownMenuItem>
         </DropdownMenuContent>

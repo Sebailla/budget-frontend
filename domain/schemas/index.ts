@@ -92,6 +92,25 @@ export const CreateExpenseSchema = z.object({
         .min(1, { message: 'Invalid amount' }),
 })
 
+export const UpdatePasswordSchema = z.object({
+    current_password: z.string().min(1, { message: 'The password cannot be empty.' }),
+    new_password: z.string()
+        .min(8, { message: 'The new password must be at least 8 characters long.' }),
+    password_confirmation: z.string()
+}).refine((data) => data.new_password === data.password_confirmation, {
+    message: "Passwords are not the same",
+    path: ["password_confirmation"]
+});
+
+export const ProfileFormSchema = z.object({
+    name: z.string()
+        .min(1, { message: 'Tu Nombre no puede ir vacio' }),
+    email: z.string()
+        .min(1, { message: 'El Email es Obligatorio' })
+        .email({ message: 'Email no válido' }),
+})
+
+
 //? Types infer ----------------------------------------------
 
 export type User = z.infer<typeof UserSchema>
