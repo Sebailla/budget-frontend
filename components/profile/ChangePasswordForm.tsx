@@ -4,28 +4,30 @@ import { logout } from "@/actions"
 import { updatePassword } from "@/actions/profile/updatePassword.action"
 import { useActionState, useEffect } from "react"
 import toast from "react-hot-toast"
+import { FormField } from "../ui/forms/FormField"
+import Button from "../ui/buttons/Button"
 
 export default function ChangePasswordForm() {
 
-    const [state, dispatch] = useActionState(updatePassword ,{
+    const [state, dispatch] = useActionState(updatePassword, {
         errors: [],
-        success:''
+        success: ''
     })
 
-    useEffect(()=>{
-        if(state.errors){
-            state.errors.forEach(e=>{
+    useEffect(() => {
+        if (state.errors) {
+            state.errors.forEach(e => {
                 toast.error(e)
             })
         }
-        if(state.success){
+        if (state.success) {
             toast.success(state.success)
-            setTimeout( ()=>{
+            setTimeout(() => {
                 logout()
             }, 1500)
-            
+
         }
-    },[state])
+    }, [state])
 
     return (
         <>
@@ -35,51 +37,38 @@ export default function ChangePasswordForm() {
                 action={dispatch}
             >
                 <div className="flex flex-col gap-5">
-                    <label
-                        className="font-bold text-2xl"
-                        htmlFor="current_password"
-                    >Password Actual</label>
-                    <input
-                        id="current_password"
-                        type="password"
-                        placeholder="Password Actual"
-                        className="w-full border border-gray-300 p-3 rounded-lg"
+                    <FormField
+                        label="Current Password"
                         name="current_password"
+                        id="current_password"
+                        type="pasword"
+                        color="lira"
                     />
                 </div>
                 <div className="flex flex-col gap-5">
-                    <label
-                        className="font-bold text-2xl"
-                        htmlFor="new_password"
-                    >Nuevo Password</label>
-                    <input
-                        id="new_password"
-                        type="password"
-                        placeholder="Password de Registro"
-                        className="w-full border border-gray-300 p-3 rounded-lg"
+                    <FormField
+                        label="New Password"
                         name="new_password"
+                        id="new_password"
+                        type="pasword"
+                        color="lira"
                     />
                 </div>
                 <div className="flex flex-col gap-5">
-                    <label
-                        htmlFor="password_confirmation"
-                        className="font-bold text-2xl"
-                    >Repetir Password</label>
-
-                    <input
-                        id="password_confirmation"
-                        type="password"
-                        placeholder="Repite Password de Registro"
-                        className="w-full border border-gray-300 p-3 rounded-lg"
+                    <FormField
+                        label="Password Confirmation"
                         name="password_confirmation"
+                        id="password_confirmation"
+                        type="pasword"
+                        color="lira"
                     />
                 </div>
 
-                <input
+                <Button
+                    className="btn w-full"
                     type="submit"
-                    value='Cambiar Password'
-                    className="bg-purple-950 hover:bg-purple-800 w-full p-3 rounded-lg text-white font-black  text-xl cursor-pointer"
-                />
+                    color="lira"
+                    name="Save New Password" />
             </form>
         </>
     )

@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 
 const tabs = [
-    { name: 'Mi Cuenta', href: '/admin/profile/settings', icon: UserIcon },
-    { name: 'Cambiar Password', href: '/admin/profile/password', icon: FingerPrintIcon },
+    { name: 'Account', href: '/admin/profile/settings', icon: UserIcon },
+    { name: 'Change Password', href: '/admin/profile/password', icon: FingerPrintIcon },
 ]
 
 function classNames(...classes: string[]) {
