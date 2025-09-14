@@ -3,7 +3,7 @@ import Image from "next/image"
 const LightLogo = () => {
     return (
         <Image
-            src='/logo_Dia.svg'
+            src='/Logo_Dia.svg'
             alt='Logo Budget tracker'
             width={650}
             height={250}
