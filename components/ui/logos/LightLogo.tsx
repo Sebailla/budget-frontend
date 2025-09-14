@@ -5,7 +5,7 @@ const LightLogo = () => {
         <Image
             src='/logo_Dia.svg'
             alt='Logo Budget tracker'
-            width={600}
+            width={650}
             height={250}
             priority={true}
         />
